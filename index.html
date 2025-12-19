@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Food That Matters: A Modern Indian Culinary Journey</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+
+        tailwind.config = {
+
+            theme: {
+
+                extend: {
+
+                    fontFamily: {
+
+                        display: ['Lobster', 'sans-serif'],
+
+                        body: ['Lobster', 'sans-serif'],
+
+                    },
+
+                    colors: {
+
+                        primary: '#B28A3B', // Muted gold accent
+
+                        secondary: '#333333', // Dark charcoal
+
+                        background: '#F8F8F8', // Off-white
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+    <style>
+
+        .parallax {
+
+            background-attachment: fixed;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            background-size: cover;
+
+        }
+
+ 
+
+        .scroll-to-top {
+
+            position: fixed;
+
+            bottom: 2rem;
+
+            right: 2rem;
+
+            z-index: 50;
+
+            opacity: 0;
+
+            transform: translateY(20px);
+
+            transition: opacity 0.3s ease, transform 0.3s ease;
+
+            cursor: pointer;
+
+        }
+
+ 
+
+        .scroll-to-top.visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
+ 
+
+        @keyframes fadeIn {
+
+            from { opacity: 0; transform: scale(0.95); }
+
+            to { opacity: 1; transform: scale(1); }
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-background text-secondary font-body">
+
+ 
+
+    <!-- Scroll-to-Top Button -->
+
+    <button id="scrollToTopBtn" class="scroll-to-top p-3 bg-primary text-white rounded-full shadow-lg hover:bg-opacity-90">
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+
+        </svg>
+
+    </button>
+
+ 
+
+    <!-- Navigation Bar -->
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-background bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-md transition-all duration-300">
+
+        <div class="container mx-auto px-4 md:px-8 lg:px-12 flex justify-between items-center py-4">
+
+            <a href="#hero" class="text-xl md:text-2xl font-display font-bold text-secondary tracking-wide">The Food That Matters</a>
+
+            <div class="hidden md:flex space-x-8 lg:space-x-12">
+
+                <a href="#about" class="text-secondary hover:text-primary font-semibold transition-colors">Our Story</a>
+
+                <a href="#menu" class="text-secondary hover:text-primary font-semibold transition-colors">Menu</a>
+
+                <a href="#reservations" class="text-secondary hover:text-primary font-semibold transition-colors">Reservations</a>
+
+                <a href="#gallery" class="text-secondary hover:text-primary font-semibold transition-colors">Gallery</a>
+
+                <a href="#contact" class="text-secondary hover:text-primary font-semibold transition-colors">Contact</a>
+
+            </div>
+
+            <!-- Mobile Menu Button -->
+
+            <button id="mobile-menu-btn" class="md:hidden text-secondary focus:outline-none">
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+
+                </svg>
+
+            </button>
+
+        </div>
+
+        <!-- Mobile Menu -->
+
+        <div id="mobile-menu" class="hidden md:hidden bg-background bg-opacity-90 backdrop-filter backdrop-blur-lg">
+
+            <div class="flex flex-col items-center py-4 space-y-4">
+
+                <a href="#about" class="text-secondary hover:text-primary font-semibold transition-colors">Our Story</a>
+
+                <a href="#menu" class="text-secondary hover:text-primary font-semibold transition-colors">Menu</a>
+
+                <a href="#reservations" class="text-secondary hover:text-primary font-semibold transition-colors">Reservations</a>
+
+                <a href="#gallery" class="text-secondary hover:text-primary font-semibold transition-colors">Gallery</a>
+
+                <a href="#contact" class="text-secondary hover:text-primary font-semibold transition-colors">Contact</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+   
+
+    <!-- Header Section (Hero) -->
+
+    <header id="hero" class="relative h-screen flex items-center justify-center text-center text-white bg-black">
+
+        <div class="absolute inset-0 bg-cover bg-center parallax" style="background-image: url('https://placehold.co/1920x1080/4B250D/ffffff?text=Elegant+Indian+Cuisine+Hero+Shot');"></div>
+
+        <div class="absolute inset-0 bg-secondary opacity-60"></div>
+
+        <div class="relative z-10 p-8 md:p-12 lg:p-16 space-y-6 animate-fadeIn">
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight">The Food That Matters</h1>
+
+            <p class="text-lg md:text-xl lg:text-2xl font-body font-normal tracking-wide">
+
+                A modern Indian culinary journey from Singapore to India.
+
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+
+                <a href="#menu" class="px-6 py-3 bg-primary text-white text-lg font-semibold rounded-full shadow-lg hover:bg-opacity-90 transition-transform hover:scale-105">
+
+                    View Our Menu
+
+                </a>
+
+                <a href="#reservations" class="px-6 py-3 bg-white text-secondary text-lg font-semibold rounded-full shadow-lg hover:bg-gray-100 transition-transform hover:scale-105">
+
+                    Book a Table
+
+                </a>
+
+                <a href="#contact" class="px-6 py-3 bg-primary text-white text-lg font-semibold rounded-full shadow-lg hover:bg-opacity-90 transition-transform hover:scale-105">
+
+                    Contact Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+ 
+
+    <!-- About Section -->
+
+    <section id="about" class="container mx-auto py-16 px-4 md:px-8 lg:px-12">
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <div class="space-y-6">
+
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-secondary">Our Story</h2>
+
+                <p class="text-lg md:text-xl leading-relaxed">
+
+                    Inspired by her vibrant experiences in Singapore, Ms. Mantasha brings a new vision to Indian dining. The Food That Matters is a celebration of rich, traditional flavors with a touch of modern, global influence. It’s where age-old recipes meet a fresh perspective, creating a dining experience that is both familiar and exciting.
+
+                </p>
+
+                <p class="text-lg leading-relaxed">
+
+                    Our passion is to create not just food, but memories. With a focus on fresh, locally-sourced ingredients and a commitment to impeccable service, we invite you to embark on a unique culinary journey with us.
+
+                </p>
+
+            </div>
+
+            <div class="relative rounded-xl overflow-hidden shadow-2xl">
+
+                <img src="https://placehold.co/800x600/6A3617/ffffff?text=Modern+Restaurant+Interior" alt="Modern Indian restaurant interior" class="w-full h-auto object-cover transition-transform hover:scale-105">
+
+            </div>
+
+        </div>
+
+    </section>
+
+ 
+
+    <!-- Menu Section -->
+
+    <section id="menu" class="bg-gray-100 py-16 px-4 md:px-8 lg:px-12">
+
+        <div class="container mx-auto">
+
+            <h2 class="text-center text-3xl md:text-4xl font-display font-bold text-secondary mb-12">Our Menu</h2>
+
+           
+
+            <div class="space-y-12">
+
+                <!-- Category 1: Starters -->
+
+                <div>
+
+                    <h3 class="text-2xl md:text-3xl font-display font-semibold text-secondary border-b-2 border-primary pb-2 mb-6">Starters</h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <!-- Menu Item 1 -->
+
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+
+                            <img src="https://placehold.co/600x400/5A2C1A/ffffff?text=Dahi+Puri" alt="Dahi Puri" class="w-full h-48 object-cover">
+
+                            <div class="p-6">
+
+                                <h4 class="text-xl font-body font-bold text-gray-900 mb-1">Dahi Puri</h4>
+
+                                <p class="text-sm text-gray-500 mb-3">Crisp puris filled with spiced potatoes, yogurt, and tangy chutneys.</p>
+
+                                <div class="flex justify-between items-center">
+
+                                    <span class="text-primary font-bold text-lg">₹ 280</span>
+
+                                    <span class="bg-green-600 text-white text-xs px-2 py-1 rounded-full">Veg</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Menu Item 2 -->
+
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+
+                            <img src="https://placehold.co/600x400/A0522D/ffffff?text=Paneer+Tikka" alt="Paneer Tikka" class="w-full h-48 object-cover">
+
+                            <div class="p-6">
+
+                                <h4 class="text-xl font-body font-bold text-gray-900 mb-1">Paneer Tikka</h4>
+
+                                <p class="text-sm text-gray-500 mb-3">Cubes of paneer marinated in spices and grilled to perfection.</p>
+
+                                <div class="flex justify-between items-center">
+
+                                    <span class="text-primary font-bold text-lg">₹ 450</span>
+
+                                    <span class="bg-green-600 text-white text-xs px-2 py-1 rounded-full">Veg</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+ 
+
+                <!-- Category 2: Main Course -->
+
+                <div>
+
+                    <h3 class="text-2xl md:text-3xl font-display font-semibold text-secondary border-b-2 border-primary pb-2 mb-6">Main Course</h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <!-- Menu Item 3 -->
+
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+
+                            <img src="https://placehold.co/600x400/6B3E26/ffffff?text=Palak+Paneer" alt="Palak Paneer" class="w-full h-48 object-cover">
+
+                            <div class="p-6">
+
+                                <h4 class="text-xl font-body font-bold text-gray-900 mb-1">Palak Paneer</h4>
+
+                                <p class="text-sm text-gray-500 mb-3">Cottage cheese cubes in a thick spinach gravy with a hint of spice.</p>
+
+                                <div class="flex justify-between items-center">
+
+                                    <span class="text-primary font-bold text-lg">₹ 600</span>
+
+                                    <span class="bg-green-600 text-white text-xs px-2 py-1 rounded-full">Veg</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Menu Item 4 -->
+
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+
+                            <img src="https://placehold.co/600x400/B25E35/ffffff?text=Dal+Makhani" alt="Dal Makhani" class="w-full h-48 object-cover">
+
+                            <div class="p-6">
+
+                                <h4 class="text-xl font-body font-bold text-gray-900 mb-1">Dal Makhani</h4>
+
+                                <p class="text-sm text-gray-500 mb-3">Slow-cooked black lentils in a rich, creamy sauce.</p>
+
+                                <div class="flex justify-between items-center">
+
+                                    <span class="text-primary font-bold text-lg">₹ 550</span>
+
+                                    <span class="bg-green-600 text-white text-xs px-2 py-1 rounded-full">Veg</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Menu Item 5 -->
+
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+
+                            <img src="https://placehold.co/600x400/8B4513/ffffff?text=Chana+Masala" alt="Chana Masala" class="w-full h-48 object-cover">
+
+                            <div class="p-6">
+
+                                <h4 class="text-xl font-body font-bold text-gray-900 mb-1">Chana Masala</h4>
+
+                                <p class="text-sm text-gray-500 mb-3">Chickpeas slow-cooked in a spiced tomato gravy with fresh cilantro.</p>
+
+                                <div class="flex justify-between items-center">
+
+                                    <span class="text-primary font-bold text-lg">₹ 480</span>
+
+                                    <span class="bg-green-600 text-white text-xs px-2 py-1 rounded-full">Veg</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Menu Item 6: Aloo Gobi -->
+
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+
+                            <img src="https://placehold.co/600x400/C8A2C8/ffffff?text=Aloo+Gobi" alt="Aloo Gobi" class="w-full h-48 object-cover">
+
+                            <div class="p-6">
+
+                                <h4 class="text-xl font-body font-bold text-gray-900 mb-1">Aloo Gobi</h4>
+
+                                <p class="text-sm text-gray-500 mb-3">A classic dish of stir-fried potatoes and cauliflower with spices.</p>
+
+                                <div class="flex justify-between items-center">
+
+                                    <span class="text-primary font-bold text-lg">₹ 500</span>
+
+                                    <span class="bg-green-600 text-white text-xs px-2 py-1 rounded-full">Veg</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Menu Item 7: Mutter Mushroom Masala -->
+
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+
+                            <img src="https://placehold.co/600x400/778899/ffffff?text=Mutter+Mushroom+Masala" alt="Mutter Mushroom Masala" class="w-full h-48 object-cover">
+
+                            <div class="p-6">
+
+                                <h4 class="text-xl font-body font-bold text-gray-900 mb-1">Mutter Mushroom Masala</h4>
+
+                                <p class="text-sm text-gray-500 mb-3">Mushrooms and green peas in a rich, spicy onion-tomato gravy.</p>
+
+                                <div class="flex justify-between items-center">
+
+                                    <span class="text-primary font-bold text-lg">₹ 580</span>
+
+                                    <span class="bg-green-600 text-white text-xs px-2 py-1 rounded-full">Veg</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Menu Item 8: Navratan Korma -->
+
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+
+                            <img src="https://placehold.co/600x400/D2B48C/ffffff?text=Navratan+Korma" alt="Navratan Korma" class="w-full h-48 object-cover">
+
+                            <div class="p-6">
+
+                                <h4 class="text-xl font-body font-bold text-gray-900 mb-1">Navratan Korma</h4>
+
+                                <p class="text-sm text-gray-500 mb-3">A royal mix of nine vegetables and fruits in a mild, creamy sauce.</p>
+
+                                <div class="flex justify-between items-center">
+
+                                    <span class="text-primary font-bold text-lg">₹ 650</span>
+
+                                    <span class="bg-green-600 text-white text-xs px-2 py-1 rounded-full">Veg</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+ 
+
+    <!-- Reservations Section -->
+
+    <section id="reservations" class="py-16 px-4 md:px-8 lg:px-12">
+
+        <div class="container mx-auto">
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <div class="relative rounded-xl overflow-hidden shadow-2xl">
+
+                    <img src="https://placehold.co/800x600/4B250D/ffffff?text=Dine-in+Experience" alt="People dining at a restaurant" class="w-full h-auto object-cover transition-transform hover:scale-105">
+
+                </div>
+
+                <div class="bg-white p-8 md:p-12 lg:p-16 rounded-xl shadow-2xl space-y-6">
+
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-secondary mb-4">Book Your Table</h2>
+
+                    <p class="text-lg text-gray-600">
+
+                        Reserve your spot for an unforgettable dining experience. Our team will ensure your visit is perfect.
+
+                    </p>
+
+                    <form class="space-y-6">
+
+                        <div>
+
+                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+
+                            <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-3" placeholder="John Doe">
+
+                        </div>
+
+                        <div>
+
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+
+                            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-3" placeholder="johndoe@example.com">
+
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                            <div>
+
+                                <label for="date" class="block text-sm font-medium text-gray-700">Date</label>
+
+                                <input type="date" id="date" name="date" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-3">
+
+                            </div>
+
+                            <div>
+
+                                <label for="time" class="block text-sm font-medium text-gray-700">Time</label>
+
+                                <input type="time" id="time" name="time" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-3">
+
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <label for="guests" class="block text-sm font-medium text-gray-700">Number of Guests</label>
+
+                            <input type="number" id="guests" name="guests" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-3" placeholder="2">
+
+                        </div>
+
+                        <button type="submit" class="w-full px-6 py-3 bg-primary text-white text-lg font-semibold rounded-full shadow-lg hover:bg-opacity-90 transition-transform hover:scale-105">
+
+                            Confirm Reservation
+
+                        </button>
+
+                    </form>
+
+                    <p id="reservation-message" class="text-center text-sm mt-4 text-green-600 hidden">Your reservation request has been received!</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+ 
+
+    <!-- Gallery Section -->
+
+    <section id="gallery" class="bg-gray-100 py-16 px-4 md:px-8 lg:px-12">
+
+        <div class="container mx-auto">
+
+            <h2 class="text-center text-3xl md:text-4xl font-display font-bold text-secondary mb-12">Gallery</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="relative rounded-xl overflow-hidden shadow-lg">
+
+                    <img src="https://placehold.co/800x600/5C2D13/ffffff?text=Elegant+Table+Setting" alt="Elegant table setting" class="w-full h-64 object-cover transition-transform hover:scale-110">
+
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden shadow-lg">
+
+                    <img src="https://placehold.co/800x600/774422/ffffff?text=Chef+at+Work" alt="Chef at work" class="w-full h-64 object-cover transition-transform hover:scale-110">
+
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden shadow-lg">
+
+                    <img src="https://placehold.co/800x600/90502A/ffffff?text=Delicious+Food+Plating" alt="Delicious food plating" class="w-full h-64 object-cover transition-transform hover:scale-110">
+
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden shadow-lg">
+
+                    <img src="https://placehold.co/800x600/6A3E1F/ffffff?text=Vibrant+Spice+Market" alt="Vibrant spice market" class="w-full h-64 object-cover transition-transform hover:scale-110">
+
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden shadow-lg">
+
+                    <img src="https://placehold.co/800x600/B86835/ffffff?text=Happy+Diners" alt="Happy diners" class="w-full h-64 object-cover transition-transform hover:scale-110">
+
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden shadow-lg">
+
+                    <img src="https://placehold.co/800x600/8A4B29/ffffff?text=Signature+Dish" alt="Signature dish" class="w-full h-64 object-cover transition-transform hover:scale-110">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+ 
+
+    <!-- Contact & Footer Section -->
+
+    <footer id="contact" class="bg-secondary text-white py-16 px-4 md:px-8 lg:px-12">
+
+        <div class="container mx-auto grid md:grid-cols-3 gap-12">
+
+            <!-- Restaurant Info -->
+
+            <div class="space-y-4">
+
+                <h3 class="text-2xl font-display font-bold text-primary">The Food That Matters</h3>
+
+                <p>A modern Indian culinary journey from Singapore to India. Bringing you the best of both worlds.</p>
+
+                <div class="flex space-x-4 mt-4">
+
+                    <a href="#" class="hover:text-primary transition-colors">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.773 1.69 4.908 4.945.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.135 3.253-1.656 4.773-4.909 4.908-1.265.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.253-.135-4.773-1.656-4.908-4.909-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.07-4.849.135-3.252 1.656-4.773 4.909-4.908 1.265-.058 1.644-.07 4.849-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.44-.645 1.44-1.44s-.645-1.44-1.44-1.44z"/></svg>
+
+                    </a>
+
+                    <a href="#" class="hover:text-primary transition-colors">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.58-1.333h2.42v-3h-3.404c-3.513 0-4.596 2.327-4.596 5.619v1.381z"/></svg>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+           
+
+            <!-- Contact Info -->
+
+            <div class="space-y-4">
+
+                <h3 class="text-2xl font-display font-bold text-primary">Contact Us</h3>
+
+                <p>
+
+                    <a href="tel:+919737773343" class="hover:underline">+91 97377 73343</a>
+
+                </p>
+
+                <p>
+
+                    <a href="tel:+918980011551" class="hover:underline">+91 89800 11551</a>
+
+                </p>
+
+                <p>
+
+                    <a href="mailto:contact@thefoodthatmatters.in" class="hover:underline">contact@thefoodthatmatters.in</a>
+
+                </p>
+
+                <p>Gujarat Ahmedabad</p>
+
+                <div class="mt-4">
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117500.08906992648!2d72.43448378964726!3d23.020275525501865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd461%3A0x6bde7815f921686b!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700466378453!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                </div>
+
+            </div>
+
+ 
+
+            <!-- Operating Hours -->
+
+            <div class="space-y-4">
+
+                <h3 class="text-2xl font-display font-bold text-primary">Hours</h3>
+
+                <ul class="space-y-2">
+
+                    <li><strong class="font-semibold">Monday - Thursday:</strong> 12:00 PM - 10:00 PM</li>
+
+                    <li><strong class="font-semibold">Friday - Saturday:</strong> 12:00 PM - 11:00 PM</li>
+
+                    <li><strong class="font-semibold">Sunday:</strong> 12:00 PM - 12:00 AM</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="text-center mt-12 pt-8 border-t border-gray-700">
+
+            <p>&copy; 2025 The Food That Matters. All Rights Reserved.</p>
+
+        </div>
+
+    </footer>
+
+ 
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Smooth scrolling for navigation links
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+                anchor.addEventListener('click', function (e) {
+
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+
+                        behavior: 'smooth'
+
+                    });
+
+                });
+
+            });
+
+ 
+
+            // Mobile menu toggle
+
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+
+                mobileMenu.classList.toggle('hidden');
+
+            });
+
+ 
+
+            // Reservation form submission (simple client-side feedback)
+
+            const reservationForm = document.querySelector('#reservations form');
+
+            const reservationMessage = document.getElementById('reservation-message');
+
+            reservationForm.addEventListener('submit', (e) => {
+
+                e.preventDefault();
+
+                // In a real application, you would send this data to a server
+
+                reservationMessage.textContent = 'Thank you! Your reservation request has been received.';
+
+                reservationMessage.classList.remove('hidden');
+
+                setTimeout(() => {
+
+                    reservationMessage.classList.add('hidden');
+
+                }, 5000);
+
+                reservationForm.reset();
+
+            });
+
+ 
+
+            // Show/hide scroll-to-top button
+
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+            window.addEventListener('scroll', () => {
+
+                if (window.scrollY > 300) {
+
+                    scrollToTopBtn.classList.add('visible');
+
+                } else {
+
+                    scrollToTopBtn.classList.remove('visible');
+
+                }
+
+            });
+
+ 
+
+            // Scroll to top functionality
+
+            scrollToTopBtn.addEventListener('click', () => {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: 'smooth'
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
